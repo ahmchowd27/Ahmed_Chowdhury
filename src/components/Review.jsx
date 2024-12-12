@@ -11,7 +11,7 @@ const experiences = [
     content:
       "Directed 160 associates, optimizing operational efficiency through strategic task assignments. Enhanced dispatch and delivery rates by 10% via data-driven analysis and strategy implementation. Assessed reports to evaluate performance, develop targeted improvements, and implement changes.",
     name: "Area Manager (L4)",
-    imgSrc: "./public/images/amazon.webp",
+    imgSrc: "/images/amazon.webp",
     company: "Amazon",
     duration: "Jun 2024 - Current",
     type: "work",
@@ -20,7 +20,7 @@ const experiences = [
     content:
       "Developed a user authentication system and managed page routing for a classroom reward platform. Utilized full-stack development skills to enhance user experience and streamline platform functionality. Integrated third-party APIs to improve functionality and user experience.",
     name: "Full Stack Developer",
-    imgSrc: "./public/images/perksway.webp",
+    imgSrc: "/images/perksway.webp",
     company: "Perksway",
     duration: "Jan 2024 - Current",
     type: "work",
@@ -29,7 +29,7 @@ const experiences = [
     content:
       "Visualized data in Jupyter Notebook, aiding strategic decisions with Looker Studio dashboards. Developed Python models for battery health, improving vehicle performance and longevity. Enhanced decision-making through data visualization and predictive analytics.",
     name: "Data Science Intern",
-    imgSrc: "./public/images/ford.webp",
+    imgSrc: "/images/ford.webp",
     company: "Ford Motor Company",
     duration: "May 2023 - Aug 2023",
     type: "work",
@@ -38,7 +38,7 @@ const experiences = [
     content:
       "Dean's List recipient for 2021, 2022, 2023, and 2024. Maintained a GPA of 3.92/4.00 while excelling in coursework related to software development, data science, and IT systems.",
     name: "Bachelor of Science: Information Technology",
-    imgSrc: "./public/images/wayne state.webp",
+    imgSrc: "/images/wayne state.webp",
     company: "Wayne State University",
     duration: "Expected Dec 2024",
     type: "education",
