@@ -116,7 +116,7 @@ const Contact = () => {
                 id="name"
                 autoComplete="name"
                 required
-                placeholder="Henry Clark"
+                placeholder="Ahmed Chowdhury"
                 className="text-field reveal-up"
               />
             </div>

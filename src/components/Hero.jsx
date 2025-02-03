@@ -11,7 +11,7 @@ const Hero = () => {
                 src="/images/me.webp"
                 width={40}
                 height={40}
-                alt="Henry Clark portrait"
+                alt="Ahmed portrait"
                 className="img-cover"
               />
             </figure>
@@ -30,7 +30,7 @@ const Hero = () => {
 
           <div className="flex items-center gap-3">
             <ButtonPrimary
-              href="/images/resume.pdf"
+              href="/images/Resume.pdf"
               target="_blank"
               label="Download CV"
               icon="download"
@@ -47,10 +47,10 @@ const Hero = () => {
         <div className="hidden lg:block">
           <figure className="w-full max-w-[480px] ml-auto bg-gradient-to-t from-sky-400 via-25% via-sky-400/40 to-65% rounded-[60px] overflow-hidden">
             <img
-              src="/images/me.webp"
+              src="/images/hero.jpg"
               width={656}
               height={800}
-              alt="Henry Clark"
+              alt="Ahmed Chowdhury"
               className="w-full"
             />
           </figure>

@@ -20,22 +20,16 @@ const works = [
     projectLink: "https://github.com/ahmchowd27/BankManagement",
   },
   {
+    imgSrc: "/images/risk.webp",
+    title: "Student Risk Prediction System",
+    tags: ["React", "Python", "PostgreSQL", "Kinesis"],
+    projectLink: "https://risk-olpd.onrender.com/",
+  },
+  {
     imgSrc: "/images/project-4.jpg",
     title: "Real estate website",
-    tags: ["Next.js", "TailwindCSS", "Dynamic Content"],
-    projectLink: "",
-  },
-  {
-    imgSrc: "/images/project-5.jpg",
-    title: "eCommerce website",
-    tags: ["Stripe API", "React", "NodeJS", "MongoDB"],
-    projectLink: "",
-  },
-  {
-    imgSrc: "/images/project-6.jpg",
-    title: "vCard Personal portfolio",
-    tags: ["HTML", "CSS", "JavaScript"],
-    projectLink: "",
+    tags: ["React", "Java Spring", "PostgreSQL", "AWS S3"],
+    projectLink: "https://github.com/ahmchowd27/real-estate",
   },
 ];
 
