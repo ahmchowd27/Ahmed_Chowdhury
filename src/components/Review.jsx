@@ -9,17 +9,27 @@ import ReviewCard from "./ReviewCard";
 const experiences = [
   {
     content:
+      "Designed and developed scalable microservices using Kotlin, Spring Boot, Kafka, Hazelcast, and Google BigQuery. Built high-performance, cloud-native search capabilities with SQL and BigQuery, optimized using distributed caching. Implemented secure authentication with JWT, service discovery with Eureka, and resilient messaging with Kafka. Automated deployments with Jenkins and GitHub Actions, contributing to multi-environment pipelines (development, staging, production). Practiced Test-Driven Development (TDD) to maintain code quality and reliability. Integrated GCP services with secure authentication, handled BigQuery-based search features, and collaborated on debugging complex production issues within a hybrid cloud infrastructure.",
+    name: "Software Engineer",
+    imgSrc: "/images/ford.webp",
+    company: "Ford Motor Company",
+    duration: "April 2025 - Current",
+    type: "work",
+  },
+
+  {
+    content:
       "Directed 160 associates, optimizing operational efficiency through strategic task assignments. Enhanced dispatch and delivery rates by 10% via data-driven analysis and strategy implementation. Assessed reports to evaluate performance, develop targeted improvements, and implement changes.",
     name: "Area Manager (L4)",
     imgSrc: "/images/amazon.webp",
     company: "Amazon",
-    duration: "Jun 2024 - Current",
+    duration: "Jun 2021 - May 2025",
     type: "work",
   },
   {
     content:
       "Developed a user authentication system and managed page routing for a classroom reward platform. Utilized full-stack development skills to enhance user experience and streamline platform functionality. Integrated third-party APIs to improve functionality and user experience.",
-    name: "Full Stack Developer",
+    name: "Full Stack Developer(Co Founder)",
     imgSrc: "/images/perksway.webp",
     company: "Perksway",
     duration: "Jan 2024 - Current",
@@ -40,7 +50,7 @@ const experiences = [
     name: "Bachelor of Science: Information Technology",
     imgSrc: "/images/wayne state.webp",
     company: "Wayne State University",
-    duration: "Expected Dec 2024",
+    duration: "Summa Cum Laude Graduate Dec 2024",
     type: "education",
   },
 ];
