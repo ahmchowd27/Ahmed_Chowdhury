@@ -38,26 +38,43 @@ const App = () => {
 
   useGSAP(() => {
     const elements = gsap.utils.toArray('.reveal-up');
-
-    elements.forEach((element) => {
-      gsap.to(element, {
-        scrollTrigger: {
-          trigger: element,
-          start: '-200 bottom',
-          end: 'bottom 80%',
-          // Removed scrub for better performance
-          toggleActions: 'play none none reverse'
+    
+    elements.forEach((element, index) => {
+      gsap.set(element, { y: 20, opacity: 0 }); // Set initial state
+      
+      ScrollTrigger.create({
+        trigger: element,
+        start: '-200 bottom',
+        end: 'bottom 80%',
+        onEnter: () => {
+          gsap.to(element, {
+            y: 0,
+            opacity: 1,
+            duration: 0.6, // Faster animations
+            ease: 'power1.out', // Simpler easing
+            delay: index * 0.05, // Stagger effect
+          });
         },
-        y: 0,
-        opacity: 1,
-        duration: 0.8, // Reduced from 1 to 0.8
-        ease: 'power2.out'
-      })
+        once: true, // Only animate once for better performance
+      });
     });
-  });
+
+    // Refresh ScrollTrigger after setup
+    ScrollTrigger.refresh();
+  }, []);
 
   return (
-    <ReactLenis root>
+    <ReactLenis 
+      root 
+      options={{
+        lerp: 0.05, // Smoother but more performant scrolling
+        duration: 1.2,
+        smoothTouch: false, // Disable on touch for better mobile performance
+        infinite: false,
+        touchMultiplier: 2,
+        wheelMultiplier: 1,
+      }}
+    >
       <FireBackground />
       <div className="relative z-10">
         <Header />

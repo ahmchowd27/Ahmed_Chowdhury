@@ -18,7 +18,6 @@ const Hero = () => {
 
             <div className="flex items-center gap-1.5 text-gray-300 text-sm tracking-wide">
               <span className="relative w-2 h-2 rounded-full bg-red-400">
-                <span className="absolute inset-0 rounded-full bg-red-400 animate-ping"></span>
               </span>
               Ahmed Chowdhury
             </div>
@@ -49,13 +48,14 @@ const Hero = () => {
         </div>
 
         <div className="hidden lg:block lg:flex lg:justify-center">
-          <figure className="w-64 h-64 fire-gradient rounded-full overflow-hidden fire-glow p-1 hover:scale-105 transition-transform duration-300">
+          <figure className="w-64 h-64 fire-gradient rounded-full overflow-hidden fire-glow p-1">
             <div className="w-full h-full bg-black/50 rounded-full overflow-hidden">
               <img
                 src="/images/hero.jpg"
                 width={256}
                 height={256}
                 alt="Ahmed Chowdhury"
+                loading="eager"
                 className="w-full h-full object-cover"
               />
             </div>

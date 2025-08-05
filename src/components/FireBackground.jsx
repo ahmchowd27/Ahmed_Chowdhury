@@ -1,44 +1,48 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 const FireBackground = () => {
   const [flames, setFlames] = useState([]);
   const [swordSlashes, setSwordSlashes] = useState([]);
 
+  // Memoize particle generation for better performance
+  const generateParticles = useMemo(() => {
+    return {
+      flames: () => {
+        const newFlames = [];
+        for (let i = 0; i < 15; i++) { // Further reduced from 20 to 15
+          newFlames.push({
+            id: i,
+            x: Math.random() * 100,
+            y: Math.random() * 100,
+            size: Math.random() * 3 + 2, // Slightly smaller
+            delay: Math.random() * 4, // Reduced delay
+            duration: 2 + Math.random() * 2 // Shorter duration
+          });
+        }
+        return newFlames;
+      },
+      slashes: () => {
+        const newSlashes = [];
+        for (let i = 0; i < 3; i++) { // Further reduced from 4 to 3
+          newSlashes.push({
+            id: i,
+            x: Math.random() * 80,
+            y: Math.random() * 80,
+            rotation: Math.random() * 360,
+            delay: i * 4, // Increased delay between slashes
+            duration: 1.2 + Math.random() * 0.5 // Shorter duration
+          });
+        }
+        return newSlashes;
+      }
+    };
+  }, []);
+
   // Generate flame particles (reduced for performance)
   useEffect(() => {
-    const generateFlames = () => {
-      const newFlames = [];
-      for (let i = 0; i < 20; i++) { // Reduced from 50 to 20
-        newFlames.push({
-          id: i,
-          x: Math.random() * 100,
-          y: Math.random() * 100,
-          size: Math.random() * 4 + 2,
-          delay: Math.random() * 5,
-          duration: 2 + Math.random() * 3
-        });
-      }
-      setFlames(newFlames);
-    };
-
-    const generateSwordSlashes = () => {
-      const newSlashes = [];
-      for (let i = 0; i < 4; i++) { // Reduced from 8 to 4
-        newSlashes.push({
-          id: i,
-          x: Math.random() * 80,
-          y: Math.random() * 80,
-          rotation: Math.random() * 360,
-          delay: i * 3,
-          duration: 1.5 + Math.random()
-        });
-      }
-      setSwordSlashes(newSlashes);
-    };
-
-    generateFlames();
-    generateSwordSlashes();
-  }, []);
+    setFlames(generateParticles.flames());
+    setSwordSlashes(generateParticles.slashes());
+  }, [generateParticles]);
 
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
@@ -85,7 +89,7 @@ const FireBackground = () => {
       ))}
 
       {/* Floating embers (reduced for performance) */}
-      {[...Array(15)].map((_, i) => ( // Reduced from 30 to 15
+      {[...Array(10)].map((_, i) => ( // Further reduced from 15 to 10
         <div
           key={i}
           className="absolute w-1 h-1 bg-orange-400 rounded-full opacity-70 ember"
@@ -99,11 +103,11 @@ const FireBackground = () => {
         />
       ))}
 
-      {/* Breathing effect overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-red-600/10 via-orange-500/5 to-red-600/10 animate-pulse"></div>
+      {/* Breathing effect overlay - simplified */}
+      <div className="absolute inset-0 bg-gradient-to-r from-red-600/5 via-orange-500/3 to-red-600/5"></div>
 
-      {/* Epic fire waves */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-red-900/30 via-orange-600/20 to-transparent opacity-60 animate-pulse"></div>
+      {/* Epic fire waves - simplified */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-red-900/20 via-orange-600/10 to-transparent opacity-40"></div>
     </div>
   );
 };

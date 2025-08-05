@@ -6,7 +6,7 @@ const certifications = [
     credentialId: "Valid",
     description: "Validates expertise in designing distributed systems and applications on AWS",
     icon: "☁️",
-    badge: "/images/aws-cert.png",
+    badge: "/images/aws.webp",
     skills: ["AWS Architecture", "Cloud Design", "Security", "Cost Optimization"]
   },
   {
@@ -34,10 +34,7 @@ const Certifications = () => {
 
         <div className="grid gap-6 md:grid-cols-2">
           {certifications.map(({ title, issuer, date, credentialId, description, icon, skills }, key) => (
-            <div key={key} className="fire-card rounded-xl p-6 reveal-up group hover:scale-105 transform transition-all duration-300">
-              
-              {/* Animated border effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-red-400/20 via-orange-400/20 to-red-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
+            <div key={key} className="fire-card rounded-xl p-6 reveal-up relative">
               
               <div className="relative z-10">
                 <div className="flex items-start justify-between mb-4">

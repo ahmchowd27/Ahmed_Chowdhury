@@ -1,13 +1,28 @@
-/* Performance optimizations */
+/* Advanced Performance Optimizations */
 * {
   will-change: auto;
 }
 
+/* Critical rendering path optimization */
+html {
+  scroll-behavior: auto; /* Disable smooth scroll for better performance */
+}
+
+/* GPU acceleration for fire animations */
 .fire-particle,
 .sword-slash,
 .ember {
   will-change: transform, opacity;
   transform: translateZ(0); /* Force hardware acceleration */
+  backface-visibility: hidden; /* Prevent flickering */
+  perspective: 1000px; /* Optimize 3D transforms */
+}
+
+/* Optimize scroll animations */
+.reveal-up {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 /* Reduce motion for users who prefer it */
@@ -22,20 +37,53 @@
     transform: none !important;
     opacity: 1 !important;
   }
+  
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
-/* Optimize animations */
+/* Optimize fire animations */
 .fire-particle {
   animation-fill-mode: forwards;
-  animation-timing-function: ease-out;
+  animation-timing-function: linear; /* More efficient than ease functions */
+  contain: layout style paint; /* Isolate rendering */
 }
 
 .sword-slash {
   animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: linear;
+  contain: layout style paint;
 }
 
 .ember {
   animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: linear;
+  contain: layout style paint;
+}
+
+/* Containment for better performance */
+.fire-card {
+  contain: layout style;
+}
+
+/* Optimize gradients */
+.fire-gradient {
+  contain: paint;
+}
+
+/* Intersection observer optimization */
+@supports (content-visibility: auto) {
+  .section {
+    content-visibility: auto;
+    contain-intrinsic-size: 500px; /* Provide intrinsic size hint */
+  }
+}
+
+/* Prevent layout shifts */
+img {
+  max-width: 100%;
+  height: auto;
 }

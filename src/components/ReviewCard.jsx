@@ -2,9 +2,7 @@ import PropTypes from "prop-types";
 
 const ReviewCard = ({ content, imgSrc, name, company, type }) => {
   return (
-    <div className="fire-card p-6 rounded-xl min-w-[320px] flex flex-col lg:min-w-[420px] group hover:scale-105 transition-all duration-300 relative overflow-hidden">
-      {/* Animated border effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-red-400/10 via-orange-400/10 to-red-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
+    <div className="fire-card p-6 rounded-xl min-w-[320px] flex flex-col lg:min-w-[420px] relative overflow-hidden">
       
       <div className="relative z-10">
         <div className="flex items-center gap-2 mb-4">

@@ -4,21 +4,31 @@ const ProjectCard = ({ imgSrc, title, tags, projectLink, description, impact, cl
   return (
     <div
       className={
-        "relative fire-card rounded-xl p-6 group hover:scale-105 transform transition-all duration-500 " +
+        "relative fire-card rounded-xl p-6 " +
         classes
       }
     >
-      {/* Animated border effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-red-400/20 via-orange-400/20 to-red-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
       
       <div className="relative z-10">
-        <figure className="img-box aspect-video rounded-lg mb-4 overflow-hidden">
-          <img src={imgSrc} alt={title} loading="lazy" className="img-cover group-hover:scale-110 transition-transform duration-500" />
-        </figure>
+        <div className="aspect-video rounded-lg mb-4 overflow-hidden bg-gray-800 border border-red-500/30">
+          <img 
+            src={imgSrc} 
+            alt={title} 
+            loading="lazy" 
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              console.error(`Failed to load image: ${imgSrc}`);
+              e.target.style.display = 'block';
+              e.target.style.background = '#1f2937';
+              e.target.style.border = '2px solid #ef4444';
+            }}
+            onLoad={() => console.log(`✅ Loaded: ${imgSrc}`)}
+          />
+        </div>
 
         <div className="flex items-center mb-3">
           <h3 className="text-xl font-bold text-gray-100 flex-1">{title}</h3>
-          <div className="w-10 h-10 rounded-lg fire-gradient flex items-center justify-center text-black shrink-0 group-hover:scale-110 transition-transform">
+          <div className="w-10 h-10 rounded-lg fire-gradient flex items-center justify-center text-black shrink-0">
             <span className="material-symbols-rounded text-sm" aria-hidden="true">
               arrow_outward
             </span>
