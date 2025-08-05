@@ -45,11 +45,12 @@ const App = () => {
           trigger: element,
           start: '-200 bottom',
           end: 'bottom 80%',
-          scrub: true
+          // Removed scrub for better performance
+          toggleActions: 'play none none reverse'
         },
         y: 0,
         opacity: 1,
-        duration: 1,
+        duration: 0.8, // Reduced from 1 to 0.8
         ease: 'power2.out'
       })
     });

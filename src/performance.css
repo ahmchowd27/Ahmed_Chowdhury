@@ -1,0 +1,41 @@
+/* Performance optimizations */
+* {
+  will-change: auto;
+}
+
+.fire-particle,
+.sword-slash,
+.ember {
+  will-change: transform, opacity;
+  transform: translateZ(0); /* Force hardware acceleration */
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .fire-particle,
+  .sword-slash,
+  .ember {
+    animation: none !important;
+  }
+  
+  .reveal-up {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Optimize animations */
+.fire-particle {
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+.sword-slash {
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+.ember {
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}

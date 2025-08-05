@@ -4,11 +4,11 @@ const FireBackground = () => {
   const [flames, setFlames] = useState([]);
   const [swordSlashes, setSwordSlashes] = useState([]);
 
-  // Generate flame particles
+  // Generate flame particles (reduced for performance)
   useEffect(() => {
     const generateFlames = () => {
       const newFlames = [];
-      for (let i = 0; i < 50; i++) {
+      for (let i = 0; i < 20; i++) { // Reduced from 50 to 20
         newFlames.push({
           id: i,
           x: Math.random() * 100,
@@ -23,7 +23,7 @@ const FireBackground = () => {
 
     const generateSwordSlashes = () => {
       const newSlashes = [];
-      for (let i = 0; i < 8; i++) {
+      for (let i = 0; i < 4; i++) { // Reduced from 8 to 4
         newSlashes.push({
           id: i,
           x: Math.random() * 80,
@@ -84,8 +84,8 @@ const FireBackground = () => {
         />
       ))}
 
-      {/* Floating embers */}
-      {[...Array(30)].map((_, i) => (
+      {/* Floating embers (reduced for performance) */}
+      {[...Array(15)].map((_, i) => ( // Reduced from 30 to 15
         <div
           key={i}
           className="absolute w-1 h-1 bg-orange-400 rounded-full opacity-70 ember"

@@ -16,6 +16,18 @@ body {
   @apply bg-gradient-to-b from-gray-900 via-red-950 to-black text-zinc-50;
 }
 
+/* Performance optimizations */
+* {
+  will-change: auto;
+}
+
+.fire-particle,
+.sword-slash,
+.ember {
+  will-change: transform, opacity;
+  transform: translateZ(0); /* Force hardware acceleration */
+}
+
 
 
 /* ---------------------------------- *\
