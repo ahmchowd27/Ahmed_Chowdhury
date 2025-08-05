@@ -1,54 +1,68 @@
 const aboutItems = [
   {
-    label: "Project done",
-    number: 15,
+    label: "Daily Queries Handled",
+    number: "50K+",
+    icon: "🚗"
   },
   {
-    label: "Years of experience",
-    number: 2,
+    label: "Team Members Led",
+    number: "160+", 
+    icon: "👥"
   },
+  {
+    label: "Performance Improvement",
+    number: "75%",
+    icon: "⚡"
+  },
+  {
+    label: "System Uptime",
+    number: "99.9%",
+    icon: "✅"
+  }
 ];
 
 const About = () => {
   return (
     <section id="about" className="section">
       <div className="container">
-        <div className="bg-zinc-800/50 p-7 rounded-2xl md:p-12 reveal-up">
-          <p className="text-zinc-300 mb-4 md:mb-8 md:text-xl md:max-w-[60ch]">
-            Welcome! I’m Ahmed Chowdhury, a software engineer and IT
-            professional with a proven track record in building scalable,
-            high-performance digital solutions. I specialize in full-stack
-            development, backend systems, and cloud technologies, with
-            experience in data-driven applications and automation. My background
-            also includes leading warehouse teams, mentoring associates, and
-            optimizing operational workflows to drive efficiency and results.
-            Let’s collaborate to turn your vision into a powerful, reliable, and
-            beautifully crafted digital solution.
-          </p>
+        <div className="fire-card p-7 rounded-2xl md:p-12 reveal-up relative overflow-hidden group">
+          {/* Animated background effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-red-400/5 via-orange-400/5 to-red-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
+          
+          <div className="relative z-10">
+            <h2 className="headline-2 mb-6 fire-text">💼 About Me</h2>
+            
+            <p className="text-gray-300 mb-6 md:mb-8 md:text-lg md:max-w-[65ch] leading-relaxed">
+              Backend Engineer at <span className="fire-text font-semibold">Ford Motor Company</span> specializing in high-performance microservices and cloud architecture. 
+              I architect scalable systems that handle <span className="fire-text font-semibold">50K+ daily queries</span> with 99.9% uptime, 
+              while also bringing leadership experience from managing <span className="fire-text font-semibold">160+ team members</span> at Amazon.
+            </p>
 
-          <div className="flex flex-wrap items-center gap-4 md:gap-7">
-            {aboutItems.map(({ label, number }, key) => (
-              <div key={key}>
-                <div className="flex items-center md:mb-2">
-                  <span className="text-2xl font-semibold md:text-4xl">
-                    {number}
-                  </span>
-                  <span className="text-sky-400 font-semibold md:text-3xl">
-                    +
-                  </span>
+            <p className="text-gray-300 mb-8 md:text-lg md:max-w-[65ch] leading-relaxed">
+              My expertise spans <span className="fire-text">Java/Kotlin, Spring Boot, Apache Kafka, and cloud platforms (AWS/GCP)</span>. 
+              I excel at modernizing legacy systems, implementing event-driven architectures, and delivering 
+              enterprise solutions that drive real business impact.
+            </p>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {aboutItems.map(({ label, number, icon }, key) => (
+                <div key={key} className="text-center group/stat hover:scale-105 transition-transform duration-300">
+                  <div className="text-2xl mb-2 group-hover/stat:animate-bounce">{icon}</div>
+                  <div className="flex items-center justify-center md:mb-2">
+                    <span className="text-2xl font-semibold md:text-3xl fire-gradient bg-clip-text text-transparent">
+                      {number}
+                    </span>
+                  </div>
+                  <p className="text-sm text-gray-400">{label}</p>
                 </div>
+              ))}
+            </div>
 
-                <p className="text-sm text-zinc-400">{label}</p>
+            <div className="mt-8 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-lg fire-gradient flex items-center justify-center font-bold text-black text-xl fire-glow">
+                AC
               </div>
-            ))}
-
-            <img
-              src="/images/logo.webp"
-              alt="Logo"
-              width={30}
-              height={30}
-              className="ml-auto md:w-[40px] md:h-[40px]"
-            />
+            </div>
           </div>
         </div>
       </div>

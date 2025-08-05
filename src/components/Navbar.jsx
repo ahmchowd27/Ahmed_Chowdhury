@@ -43,8 +43,9 @@ const Navbar = ({ navOpen }) => {
   const navItems = [
     { label: "Home", link: "#home", className: "nav-link active" },
     { label: "About", link: "#about", className: "nav-link" },
-    { label: "Work", link: "#work", className: "nav-link" },
-
+    { label: "Skills", link: "#skills", className: "nav-link" },
+    { label: "Projects", link: "#work", className: "nav-link" },
+    { label: "Certifications", link: "#certifications", className: "nav-link" },
     { label: "Contact", link: "#contact", className: "nav-link md:hidden" },
   ];
 

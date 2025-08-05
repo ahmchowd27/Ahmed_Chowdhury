@@ -14,16 +14,23 @@ const sitemap = [
     href: "#home",
   },
   {
-    label: "About",
+    label: "About", 
     href: "#about",
   },
   {
-    label: "Work",
+    label: "Skills",
+    href: "#skills",
+  },
+  {
+    label: "Projects",
     href: "#work",
   },
-
   {
-    label: "Contact me",
+    label: "Certifications",
+    href: "#certifications",
+  },
+  {
+    label: "Contact",
     href: "#contact",
   },
 ];
@@ -31,50 +38,66 @@ const sitemap = [
 const socials = [
   {
     label: "GitHub",
-    href: "https://www.github.com/ahmchowd27",
+    href: "https://github.com/ahmchowd27",
+    icon: "🔗"
   },
   {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/ahmed-s-chowdhury/",
+    label: "LinkedIn", 
+    href: "https://www.linkedin.com/in/ahmed-s-chowdhury",
+    icon: "💼"
   },
   {
-    label: "Twitter X",
-    href: "https://x.com/Afghanistantop",
+    label: "Portfolio",
+    href: "https://ahmed-chowdhury.onrender.com",
+    icon: "🌐"
   },
   {
-    label: "Instagram",
-    href: "https://www.instagram.com/asc1516/",
+    label: "Email",
+    href: "mailto:ahmedssofa@gmail.com",
+    icon: "✉️"
   },
 ];
 
 const Footer = () => {
   return (
-    <footer className="section">
+    <footer className="bg-black/50 backdrop-blur-xl border-t border-red-500/20 py-16">
       <div className="container">
-        <div className="lg:grid lg:grid-cols-2">
+        <div className="lg:grid lg:grid-cols-2 lg:gap-16">
           <div className="mb-10">
-            <h2 className="headline-1 mb-8 lg:max-w-[12ch] reveal-up">
-              Let&apos;s work together today!
+            <div className="flex items-center space-x-3 mb-6">
+              <div className="w-12 h-12 rounded-lg fire-gradient flex items-center justify-center font-bold text-black text-lg fire-glow">
+                AC
+              </div>
+              <span className="text-xl font-bold text-gray-100">Ahmed Chowdhury</span>
+            </div>
+
+            <h2 className="headline-1 mb-6 lg:max-w-[15ch] reveal-up">
+              Ready to build something amazing together?
             </h2>
+
+            <p className="text-gray-300 mb-8 max-w-md leading-relaxed reveal-up">
+              Backend Engineer specializing in scalable microservices and cloud architecture. 
+              Let's discuss your next project and create high-performance solutions.
+            </p>
 
             <ButtonPrimary
               href="mailto:ahmedssofa@gmail.com"
-              label="Start project"
+              label="Start Collaboration"
               icon="chevron_right"
               classes="reveal-up"
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-4 lg:pl-20">
+          <div className="grid grid-cols-2 gap-8 lg:pl-8">
             <div>
-              <p className="mb-2 reveal-up">Sitemap</p>
+              <h4 className="text-lg font-semibold text-gray-100 mb-4 reveal-up">Quick Links</h4>
 
-              <ul>
+              <ul className="space-y-2">
                 {sitemap.map(({ label, href }, key) => (
                   <li key={key}>
                     <a
                       href={href}
-                      className="block text-sm text-zinc-400 py-1 transition-colors hover:text-zinc-200 reveal-up"
+                      className="block text-sm text-gray-300 py-1 transition-colors hover:text-red-400 reveal-up"
                     >
                       {label}
                     </a>
@@ -84,33 +107,54 @@ const Footer = () => {
             </div>
 
             <div>
-              <p className="mb-2 reveal-up">Socials</p>
+              <h4 className="text-lg font-semibold text-gray-100 mb-4 reveal-up">Connect</h4>
 
-              <ul>
-                {socials.map(({ label, href }, key) => (
+              <ul className="space-y-2">
+                {socials.map(({ label, href, icon }, key) => (
                   <li key={key}>
                     <a
                       href={href}
                       target="_blank"
-                      className="block text-sm text-zinc-400 py-1 transition-colors hover:text-zinc-200 reveal-up"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm text-gray-300 py-1 transition-colors hover:text-red-400 reveal-up"
                     >
+                      <span>{icon}</span>
                       {label}
                     </a>
                   </li>
                 ))}
               </ul>
+
+              <div className="mt-6 fire-card p-4 rounded-lg reveal-up">
+                <h5 className="text-sm font-semibold text-gray-100 mb-2">Contact Info</h5>
+                <p className="text-xs text-gray-400 mb-1">📧 ahmedssofa@gmail.com</p>
+                <p className="text-xs text-gray-400 mb-1">📱 313-455-6138</p>
+                <p className="text-xs text-gray-400">📍 Hamtramck, Michigan</p>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="flex items-center justify-between pt-10 mb-8">
-          <a href="/" className="logo reveal-up">
-            <img src="/images/logo.webp" width={40} height={40} alt="Logo" />
-          </a>
+        <div className="border-t border-red-500/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <div className="flex items-center space-x-3 mb-4 md:mb-0">
+            <div className="w-8 h-8 rounded-lg fire-gradient flex items-center justify-center font-bold text-black text-sm">
+              AC
+            </div>
+            <p className="text-gray-300 text-sm reveal-up">
+              &copy; 2025 <span className="fire-text font-semibold">Ahmed Chowdhury</span>. All rights reserved.
+            </p>
+          </div>
 
-          <p className="text-zinc-500 text-sm reveal-up">
-            &copy; 2025 <span className="text-zinc-200">AhmedC</span>
-          </p>
+          <div className="flex space-x-6">
+            <span className="text-gray-300 text-xs flex items-center reveal-up">
+              <span className="mr-2">⚡</span>
+              Built with React & Passion
+            </span>
+            <span className="text-gray-300 text-xs flex items-center reveal-up">
+              <span className="mr-2">🔥</span>
+              Powered by Innovation
+            </span>
+          </div>
         </div>
       </div>
     </footer>

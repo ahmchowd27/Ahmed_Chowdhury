@@ -1,87 +1,66 @@
-import SkillCard from "./SkillCard";
-
-const skillItem = [
+const skillCategories = [
   {
-    imgSrc: "/images/java.webp",
-    label: "Java",
-    desc: "Object-Oriented Programming",
+    title: "Backend & Systems",
+    icon: "⚙️",
+    description: "Server-side development and system architecture",
+    skills: ["Java/Kotlin", "Spring Boot", "Microservices", "Apache Kafka", "System Design"]
   },
   {
-    imgSrc: "/images/python.webp",
-    label: "Python",
-    desc: "Data Science & Automation",
+    title: "Cloud & DevOps",
+    icon: "☁️",
+    description: "Cloud platforms and deployment infrastructure",
+    skills: ["AWS/GCP", "Docker/Kubernetes", "CI/CD", "Infrastructure as Code", "Performance Optimization"]
   },
   {
-    imgSrc: "/images/rest.webp",
-    label: "REST API",
-    desc: "Integration & Communication",
+    title: "Data & Analytics",
+    icon: "📊",
+    description: "Data processing and analytics platforms",
+    skills: ["SQL/BigQuery", "Apache Spark", "PostgreSQL/MongoDB", "Data Pipelines", "Machine Learning"]
   },
   {
-    imgSrc: "/images/sql.webp",
-    label: "SQL",
-    desc: "Relational Databases",
-  },
-  {
-    imgSrc: "/images/postgres.webp",
-    label: "PostgreSQL",
-    desc: "Advanced Relational Databases",
-  },
-  {
-    imgSrc: "/images/aws.webp",
-    label: "AWS",
-    desc: "Cloud Computing",
-  },
-  {
-    imgSrc: "/images/mongodb.svg",
-    label: "MongoDB",
-    desc: "NoSQL Database",
-  },
-  {
-    imgSrc: "/images/nodejs.svg",
-    label: "NodeJS",
-    desc: "Web Server",
-  },
-  {
-    imgSrc: "/images/expressjs.svg",
-    label: "ExpressJS",
-    desc: "Node Framework",
-  },
-  {
-    imgSrc: "/images/axios.webp",
-    label: "Axios",
-    desc: "HTTP Client",
-  },
-  {
-    imgSrc: "/images/react.svg",
-    label: "React",
-    desc: "Framework",
-  },
-  {
-    imgSrc: "/images/tailwindcss.svg",
-    label: "TailwindCSS",
-    desc: "User Interface",
-  },
+    title: "Frontend & Full-Stack",
+    icon: "💻",
+    description: "User interfaces and complete application development",
+    skills: ["React/JavaScript", "Python", "REST APIs", "TDD/BDD", "Event-Driven Architecture"]
+  }
 ];
+
+const SkillCategory = ({ category }) => (
+  <div className="fire-card rounded-xl p-6 group hover:scale-105 transition-all duration-300 reveal-up relative overflow-hidden">
+    <div className="absolute inset-0 bg-gradient-to-br from-red-400/5 to-orange-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+    
+    <div className="relative z-10">
+      <div className="flex items-center mb-4">
+        <span className="text-2xl mr-3">{category.icon}</span>
+        <h3 className="text-lg font-bold text-gray-100">{category.title}</h3>
+      </div>
+      <p className="text-sm text-gray-300 mb-4">{category.description}</p>
+      <div className="flex flex-wrap gap-2">
+        {category.skills.map((skill, index) => (
+          <span key={index} className="px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-red-400/20 to-orange-400/20 text-red-400 border border-current/30 hover:scale-110 transition-transform cursor-default">
+            {skill}
+          </span>
+        ))}
+      </div>
+    </div>
+  </div>
+);
+
 const Skill = () => {
   return (
-    <section className="section">
+    <section id="skills" className="section">
       <div className="container">
-        <h2 className="headline-2 reveal-up">Essential Tools I use</h2>
+        <h2 className="headline-2 reveal-up text-center fire-text mb-4">
+          💻 Technical Skills
+        </h2>
 
-        <p className="text-zinc-400 mt-3 mb-8 max-w-[50ch] reveal-up">
-          Discover the powerful tools and technologies I use to create
-          exceptional, high-performing websites & applications.
+        <p className="text-gray-300 mt-3 mb-12 text-lg text-center reveal-up max-w-2xl mx-auto">
+          Technologies and tools I use to build scalable, high-performance applications that power enterprise systems
         </p>
 
-        <div className="grid gap-3 grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))]">
-          {skillItem.map(({ imgSrc, label, desc }, key) => (
-            <SkillCard
-              key={key}
-              imgSrc={imgSrc}
-              label={label}
-              desc={desc}
-              classes="reveal-up"
-            />
+        <div className="grid gap-8 md:grid-cols-2">
+          {skillCategories.map((category, index) => (
+            <SkillCategory key={index} category={category} />
           ))}
         </div>
       </div>

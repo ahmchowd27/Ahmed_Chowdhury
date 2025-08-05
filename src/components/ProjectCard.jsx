@@ -1,41 +1,55 @@
 import PropTypes from "prop-types";
 
-const ProjectCard = ({ imgSrc, title, tags, projectLink, classes }) => {
+const ProjectCard = ({ imgSrc, title, tags, projectLink, description, impact, classes }) => {
   return (
     <div
       className={
-        "relative p-4 rounded-2xl bg-zinc-800 hover:bg-zinc-700/50 active:bg-zinc-700/60 ring-1 ring-inset ring-zinc-50/5 transition-colors " +
+        "relative fire-card rounded-xl p-6 group hover:scale-105 transform transition-all duration-500 " +
         classes
       }
     >
-      <figure className="img-box aspect-square rounded-lg mb-4">
-        <img src={imgSrc} alt={title} loading="lazy" className="img-cover" />
-      </figure>
+      {/* Animated border effect */}
+      <div className="absolute inset-0 bg-gradient-to-r from-red-400/20 via-orange-400/20 to-red-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
+      
+      <div className="relative z-10">
+        <figure className="img-box aspect-video rounded-lg mb-4 overflow-hidden">
+          <img src={imgSrc} alt={title} loading="lazy" className="img-cover group-hover:scale-110 transition-transform duration-500" />
+        </figure>
 
-      <div className="flex items-center justify-between gap-4">
-        <div>
-          <h3 className="title-1 mb-3">{title}</h3>
-
-          <div className="flex flex-wrap items-center gap-2">
-            {tags.map((label, key) => (
-              <span
-                key={key}
-                className="h-8 text-sm text-zinc-400 bg-zinc-50/5 grid items-center px-3 rounded-lg"
-              >
-                {label}
-              </span>
-            ))}
+        <div className="flex items-center mb-3">
+          <h3 className="text-xl font-bold text-gray-100 flex-1">{title}</h3>
+          <div className="w-10 h-10 rounded-lg fire-gradient flex items-center justify-center text-black shrink-0 group-hover:scale-110 transition-transform">
+            <span className="material-symbols-rounded text-sm" aria-hidden="true">
+              arrow_outward
+            </span>
           </div>
         </div>
 
-        <div className="w-11 h-11 rounded-lg grid place-items-center bg-sky-400 text-zinc-950 shrink-0">
-          <span className="material-symbols-rounded" aria-hidden="true">
-            arrow_outward
-          </span>
+        {description && (
+          <p className="text-gray-300 text-sm mb-4 leading-relaxed line-clamp-3">
+            {description}
+          </p>
+        )}
+
+        <div className="flex flex-wrap items-center gap-2 mb-4">
+          {tags.map((label, key) => (
+            <span
+              key={key}
+              className="px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-red-400/20 to-orange-400/20 text-red-400 border border-current/30"
+            >
+              {label}
+            </span>
+          ))}
         </div>
+
+        {impact && (
+          <div className="text-xs fire-text font-semibold border-t border-red-500/20 pt-3">
+            {impact}
+          </div>
+        )}
       </div>
 
-      <a href={projectLink} target="_blank" className="absolute inset-0"></a>
+      <a href={projectLink} target="_blank" rel="noopener noreferrer" className="absolute inset-0"></a>
     </div>
   );
 };
@@ -45,6 +59,8 @@ ProjectCard.propTypes = {
   title: PropTypes.string.isRequired,
   tags: PropTypes.array.isRequired,
   projectLink: PropTypes.string,
+  description: PropTypes.string,
+  impact: PropTypes.string,
   classes: PropTypes.string,
 };
 
