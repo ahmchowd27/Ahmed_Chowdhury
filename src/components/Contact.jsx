@@ -18,7 +18,7 @@ const socialLinks = [
     alt: "GitHub",
   },
   {
-    href: "https://www.linkedin.com/in/ahmed-s-chowdhury/",
+    href: "https://linkedin.com/in/ahmed-s-chowdhury",
     icon: (
       <svg
         width="24"

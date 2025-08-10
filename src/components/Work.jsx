@@ -10,6 +10,14 @@ const works = [
     impact: "Full video streaming • User authentication • Responsive design"
   },
   {
+    imgSrc: "/images/rest.webp",
+    title: "SafeSnap - AI Safety Incident Reporting API",
+    tags: ["Kotlin", "Spring Boot", "PostgreSQL", "Google Vision AI", "OpenAI", "AWS S3"],
+    projectLink: "https://github.com/ahmchowd27/SafeSnap-Backend",
+    description: "Production-ready enterprise backend system for safety incident reporting. Features JWT authentication, AI-powered image analysis, automated Root Cause Analysis generation, and comprehensive workflow management for construction teams.",
+    impact: "40+ REST endpoints • AI-powered analysis • Enterprise security • 80%+ test coverage"
+  },
+  {
     imgSrc: "/images/booklet.webp", 
     title: "Booklet Management System",
     tags: ["JavaScript", "Admin Dashboard", "Responsive Design", "Database"],
