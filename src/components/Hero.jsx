@@ -24,11 +24,11 @@ const Hero = () => {
           </div>
 
           <h2 className="headline-1 max-w-[15ch] sm:max-w-[20ch] lg:max-w-[15ch] mt-5 mb-8 lg:mb-10">
-            Full Stack Engineer Forging High-Performance Systems
+            Flame Hashira Forging High-Performance Systems to Slay Digital Demons
           </h2>
 
           <p className="text-lg text-gray-300 mb-8 max-w-md leading-relaxed">
-            Specializing in scalable microservices, cloud architecture, and enterprise systems that power real-world operations at Ford and beyond.
+            Mastering Flame Breathing techniques in scalable microservices, cloud architecture, and enterprise systems that protect Ford&apos;s digital realm and beyond.
           </p>
 
           <div className="flex items-center gap-3">

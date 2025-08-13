@@ -29,7 +29,7 @@ const Certifications = () => {
         </h2>
         
         <p className="text-center text-gray-300 mb-12 text-lg reveal-up">
-          Industry-recognized credentials that validate my expertise
+          Industry-recognized credentials that validate technical expertise
         </p>
 
         <div className="grid gap-6 md:grid-cols-2">

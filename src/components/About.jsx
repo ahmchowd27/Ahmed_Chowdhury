@@ -1,23 +1,23 @@
 const aboutItems = [
   {
-    label: "Daily Queries Handled",
+    label: "Daily Requests Processed",
     number: "50K+",
-    icon: "🚗"
+    icon: "⚔️"
   },
   {
     label: "Team Members Led",
     number: "160+", 
-    icon: "👥"
+    icon: "🥷"
   },
   {
     label: "Performance Improvement",
     number: "75%",
-    icon: "⚡"
+    icon: "🔥"
   },
   {
     label: "System Uptime",
     number: "99.9%",
-    icon: "✅"
+    icon: "🏆"
   }
 ];
 
@@ -28,18 +28,18 @@ const About = () => {
         <div className="fire-card p-7 rounded-2xl md:p-12 reveal-up relative overflow-hidden">
           
           <div className="relative z-10">
-            <h2 className="headline-2 mb-6 fire-text">💼 About Me</h2>
+            <h2 className="headline-2 mb-6 fire-text">⚔️ About This Demon Slayer</h2>
             
             <p className="text-gray-300 mb-6 md:mb-8 md:text-lg md:max-w-[65ch] leading-relaxed">
-              Backend Engineer at <span className="fire-text font-semibold">Ford Motor Company</span> specializing in high-performance microservices and cloud architecture. 
-              I architect scalable systems that handle <span className="fire-text font-semibold">50K+ daily queries</span> with 99.9% uptime, 
-              while also bringing leadership experience from managing <span className="fire-text font-semibold">160+ team members</span> at Amazon.
+              <span className="fire-text font-semibold">Flame Hashira</span> at Ford Motor Company, specializing in backend development and cloud architecture. 
+              I build scalable systems that process <span className="fire-text font-semibold">50K+ daily requests</span> with 99.9% uptime, 
+              while bringing leadership experience from managing <span className="fire-text font-semibold">160+ team members</span> at Amazon.
             </p>
 
             <p className="text-gray-300 mb-8 md:text-lg md:max-w-[65ch] leading-relaxed">
-              My expertise spans <span className="fire-text">Java/Kotlin, Spring Boot, Apache Kafka, and cloud platforms (AWS/GCP)</span>. 
-              I excel at modernizing legacy systems, implementing event-driven architectures, and delivering 
-              enterprise solutions that drive real business impact.
+              My technical arsenal includes <span className="fire-text">Java/Kotlin, Spring Boot, Apache Kafka, and cloud platforms (AWS/GCP)</span>. 
+              I specialize in modernizing legacy systems, implementing event-driven architectures, and delivering 
+              enterprise solutions that drive business growth and innovation.
             </p>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">

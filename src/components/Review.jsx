@@ -55,7 +55,7 @@ const Review = () => {
         </h2>
         
         <p className="text-center text-gray-300 mb-12 text-lg reveal-up">
-          Building enterprise systems and leading high-performance teams
+          Building powerful systems and leading high-performance teams
         </p>
 
         <div className="grid gap-6 md:grid-cols-2 mb-16">
@@ -79,7 +79,7 @@ const Review = () => {
         </h2>
         
         <p className="text-center text-gray-300 mb-12 text-lg reveal-up">
-          Academic excellence with focus on technology and innovation
+          Academic foundation with focus on technology and innovation
         </p>
 
         <div className="flex justify-center">

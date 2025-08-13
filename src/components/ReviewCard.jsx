@@ -7,7 +7,7 @@ const ReviewCard = ({ content, imgSrc, name, company, type }) => {
       <div className="relative z-10">
         <div className="flex items-center gap-2 mb-4">
           <span className="fire-text text-sm font-bold px-3 py-1 rounded-full bg-gradient-to-r from-red-400/20 to-orange-400/20 border border-red-400/30">
-            {type === "education" ? "🎓 Education" : "💼 Work Experience"}
+            {type === "education" ? "🎓 Education" : "💼 Professional Experience"}
           </span>
         </div>
 

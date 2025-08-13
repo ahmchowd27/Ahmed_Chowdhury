@@ -1,29 +1,31 @@
 const skillCategories = [
   {
-    title: "Backend & Systems",
-    icon: "⚙️",
-    description: "Server-side development and system architecture",
-    skills: ["Java/Kotlin", "Spring Boot", "Microservices", "Apache Kafka", "System Design"]
+    title: "Flame Breathing - Backend Arts",
+    icon: "🔥",
+    description: "Master of server-side systems and microservices architecture",
+    skills: ["Java/Kotlin Blade", "Spring Boot Technique", "Microservices Formation", "Apache Kafka Stream", "System Design Mastery"]
   },
   {
-    title: "Cloud & DevOps",
-    icon: "☁️",
-    description: "Cloud platforms and deployment infrastructure",
-    skills: ["AWS/GCP", "Docker/Kubernetes", "CI/CD", "Infrastructure as Code", "Performance Optimization"]
+    title: "Thunder Breathing - Cloud Arts", 
+    icon: "⚡",
+    description: "Lightning-fast cloud deployment and infrastructure mastery",
+    skills: ["AWS/GCP Domain", "Docker/Kubernetes Style", "CI/CD Lightning", "Infrastructure Arts", "Performance Optimization"]
   },
   {
-    title: "Data & Analytics",
-    icon: "📊",
-    description: "Data processing and analytics platforms",
-    skills: ["SQL/BigQuery", "Apache Spark", "PostgreSQL/MongoDB", "Data Pipelines", "Machine Learning"]
+    title: "Water Breathing - Data Arts",
+    icon: "🌊", 
+    description: "Fluid data processing and analytical techniques",
+    skills: ["SQL/BigQuery Flow", "Apache Spark Rapids", "Database Mastery", "Data Pipeline Forms", "Machine Learning"]
   },
   {
-    title: "Frontend & Full-Stack",
-    icon: "💻",
-    description: "User interfaces and complete application development",
-    skills: ["React/JavaScript", "Python", "REST APIs", "TDD/BDD", "Event-Driven Architecture"]
+    title: "Sun Breathing - Full-Stack Arts",
+    icon: "☀️",
+    description: "The most powerful complete development technique",
+    skills: ["React/JavaScript", "Python Serpent", "REST API Forms", "Testing Frameworks", "Event-Driven Systems"]
   }
 ];
+
+import PropTypes from 'prop-types';
 
 const SkillCategory = ({ category }) => (
   <div className="fire-card rounded-xl p-6 reveal-up relative overflow-hidden">
@@ -44,16 +46,25 @@ const SkillCategory = ({ category }) => (
   </div>
 );
 
+SkillCategory.propTypes = {
+  category: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    icon: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    skills: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }).isRequired,
+};
+
 const Skill = () => {
   return (
     <section id="skills" className="section">
       <div className="container">
         <h2 className="headline-2 reveal-up text-center fire-text mb-4">
-          💻 Technical Skills
+          ⚔️ Demon Slayer Breathing Techniques
         </h2>
 
         <p className="text-gray-300 mt-3 mb-12 text-lg text-center reveal-up max-w-2xl mx-auto">
-          Technologies and tools I use to build scalable, high-performance applications that power enterprise systems
+          Mastered breathing forms to build enterprise systems and slay technical demons
         </p>
 
         <div className="grid gap-8 md:grid-cols-2">
