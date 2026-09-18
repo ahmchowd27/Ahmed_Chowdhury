@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#160907"/>
+      <stop offset="100%" stop-color="#07050a"/>
+    </linearGradient>
+    <linearGradient id="fireStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="50%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#facc15"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#f97316" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="520" fill="url(#bgGrad)"/>
+
+  <text x="40" y="46" font-size="15" letter-spacing="2" fill="#9ca3af">SYSTEM ARCHITECTURE</text>
+
+  <!-- glow behind central node -->
+  <ellipse cx="470" cy="260" rx="260" ry="180" fill="url(#glow)"/>
+
+  <!-- connectors -->
+  <line x1="240" y1="260" x2="336" y2="260" stroke="#fb923c" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <path d="M600,230 C650,230 650,115 696,115" fill="none" stroke="#fb923c" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <path d="M600,290 C650,290 650,405 696,405" fill="none" stroke="#fb923c" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <path d="M960,115 C985,115 985,235 996,235" fill="none" stroke="#fb923c" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <path d="M960,405 C985,405 985,285 996,285" fill="none" stroke="#fb923c" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Box A: Field Report -->
+  <g>
+    <rect x="40" y="215" width="200" height="90" rx="14" fill="#141414" stroke="#ef4444" stroke-opacity="0.35"/>
+    <circle cx="74" cy="260" r="18" fill="none" stroke="#fb923c" stroke-width="2"/>
+    <path d="M74,267 L74,253 M68,259 L74,251 L80,259" fill="none" stroke="#fb923c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="104" y="255" font-size="17" font-weight="700" fill="#f3f4f6">Field Report</text>
+    <text x="104" y="274" font-size="12.5" fill="#9ca3af">Mobile / web upload</text>
+  </g>
+
+  <!-- Box B: SafeSnap API (central) -->
+  <g>
+    <rect x="340" y="200" width="260" height="120" rx="16" fill="#141414" stroke="url(#fireStroke)" stroke-width="2.5"/>
+    <circle cx="378" cy="260" r="20" fill="none" stroke="#fbbf24" stroke-width="2"/>
+    <rect x="371" y="252" width="14" height="3" rx="1.5" fill="#fbbf24"/>
+    <rect x="371" y="258.5" width="14" height="3" rx="1.5" fill="#fbbf24"/>
+    <rect x="371" y="265" width="14" height="3" rx="1.5" fill="#fbbf24"/>
+    <text x="410" y="252" font-size="20" font-weight="700" fill="#f9fafb">SafeSnap API</text>
+    <text x="410" y="273" font-size="13.5" fill="#d1d5db">Kotlin + Spring Boot</text>
+    <text x="410" y="292" font-size="12" fill="#9ca3af">JWT-secured REST</text>
+  </g>
+
+  <!-- Box C: AI Hazard Analysis -->
+  <g>
+    <rect x="700" y="65" width="260" height="100" rx="14" fill="#141414" stroke="#ef4444" stroke-opacity="0.35"/>
+    <path d="M718,115 Q734,103 750,115 Q734,127 718,115 Z" fill="none" stroke="#fb923c" stroke-width="2"/>
+    <circle cx="734" cy="115" r="3" fill="#fb923c"/>
+    <text x="764" y="110" font-size="17" font-weight="700" fill="#f3f4f6">AI Hazard Analysis</text>
+    <text x="764" y="129" font-size="12.5" fill="#9ca3af">Google Vision + OpenAI</text>
+  </g>
+
+  <!-- Box D: Data and Media Storage -->
+  <g>
+    <rect x="700" y="355" width="260" height="100" rx="14" fill="#141414" stroke="#ef4444" stroke-opacity="0.35"/>
+    <path d="M726,397 L726,413 A10,4 0 0 0 746,413 L746,397" fill="none" stroke="#fb923c" stroke-width="2"/>
+    <ellipse cx="736" cy="397" rx="10" ry="4" fill="none" stroke="#fb923c" stroke-width="2"/>
+    <text x="764" y="400" font-size="17" font-weight="700" fill="#f3f4f6">Data &amp; Media Storage</text>
+    <text x="764" y="419" font-size="12.5" fill="#9ca3af">PostgreSQL + AWS S3</text>
+  </g>
+
+  <!-- Box E: RCA Report -->
+  <g>
+    <rect x="1000" y="215" width="160" height="90" rx="14" fill="#141414" stroke="#ef4444" stroke-opacity="0.35"/>
+    <rect x="1022" y="248" width="18" height="24" rx="2" fill="none" stroke="#fb923c" stroke-width="2"/>
+    <line x1="1026" y1="255" x2="1036" y2="255" stroke="#fb923c" stroke-width="1.6"/>
+    <line x1="1026" y1="260" x2="1036" y2="260" stroke="#fb923c" stroke-width="1.6"/>
+    <line x1="1026" y1="265" x2="1033" y2="265" stroke="#fb923c" stroke-width="1.6"/>
+    <text x="1052" y="255" font-size="16" font-weight="700" fill="#f3f4f6">RCA Report</text>
+    <text x="1052" y="274" font-size="12" fill="#9ca3af">Auto-generated</text>
+  </g>
+</svg>

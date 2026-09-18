@@ -2,22 +2,22 @@ const aboutItems = [
   {
     label: "Daily Requests Processed",
     number: "50K+",
-    icon: "⚔️"
+    icon: "📈"
   },
   {
     label: "Team Members Led",
-    number: "160+", 
-    icon: "🥷"
+    number: "160+",
+    icon: "👥"
   },
   {
     label: "Performance Improvement",
     number: "75%",
-    icon: "🔥"
+    icon: "⚡"
   },
   {
     label: "System Uptime",
     number: "99.9%",
-    icon: "🏆"
+    icon: "🟢"
   }
 ];
 
@@ -26,20 +26,24 @@ const About = () => {
     <section id="about" className="section">
       <div className="container">
         <div className="fire-card p-7 rounded-2xl md:p-12 reveal-up relative overflow-hidden">
-          
+
           <div className="relative z-10">
-            <h2 className="headline-2 mb-6 fire-text">⚔️ About This Demon Slayer</h2>
-            
+            <h2 className="headline-2 mb-6 fire-text">About</h2>
+
             <p className="text-gray-300 mb-6 md:mb-8 md:text-lg md:max-w-[65ch] leading-relaxed">
-              <span className="fire-text font-semibold">Flame Hashira</span> at Ford Motor Company, specializing in backend development and cloud architecture. 
-              I build scalable systems that process <span className="fire-text font-semibold">50K+ daily requests</span> with 99.9% uptime, 
-              while bringing leadership experience from managing <span className="fire-text font-semibold">160+ team members</span> at Amazon.
+              I&apos;m a <span className="fire-text font-semibold">Software Engineer at Ford Motor Company</span>, working
+              across backend systems, cloud platforms, and increasingly agentic AI engineering. I build production
+              services that process <span className="fire-text font-semibold">50K+ daily requests</span> at 99.9% uptime,
+              and bring leadership experience from managing <span className="fire-text font-semibold">160+ team members</span> in
+              high-volume operations at Amazon.
             </p>
 
             <p className="text-gray-300 mb-8 md:text-lg md:max-w-[65ch] leading-relaxed">
-              My technical arsenal includes <span className="fire-text">Java/Kotlin, Spring Boot, Apache Kafka, and cloud platforms (AWS/GCP)</span>. 
-              I specialize in modernizing legacy systems, implementing event-driven architectures, and delivering 
-              enterprise solutions that drive business growth and innovation.
+              My work spans three areas: <span className="fire-text">backend &amp; distributed systems</span> (Java/Kotlin,
+              Spring Boot, Kafka, MongoDB, Redis), <span className="fire-text">cloud &amp; data platforms</span> (GCP,
+              BigQuery, Airflow, Terraform), and <span className="fire-text">AI &amp; agentic engineering</span> (Python,
+              MCP, RAG, hybrid retrieval). I&apos;m a <span className="fire-text font-semibold">GCP Certified Associate Cloud Engineer</span> and
+              an <span className="fire-text font-semibold">AWS Certified Solutions Architect Associate</span>.
             </p>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">

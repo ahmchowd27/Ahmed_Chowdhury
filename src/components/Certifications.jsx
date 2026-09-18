@@ -1,5 +1,14 @@
 const certifications = [
   {
+    title: "Google Cloud Certified Associate Cloud Engineer",
+    issuer: "Google Cloud",
+    date: "2025",
+    credentialId: "Valid",
+    description: "Validates the ability to deploy applications, monitor operations, and manage enterprise solutions on Google Cloud Platform",
+    icon: "☁️",
+    skills: ["GCP", "Cloud Deployment", "BigQuery", "Cloud Operations"]
+  },
+  {
     title: "AWS Certified Solutions Architect Associate",
     issuer: "Amazon Web Services",
     date: "2024",
@@ -8,15 +17,6 @@ const certifications = [
     icon: "☁️",
     badge: "/images/aws.webp",
     skills: ["AWS Architecture", "Cloud Design", "Security", "Cost Optimization"]
-  },
-  {
-    title: "TestOut Network Pro",
-    issuer: "TestOut Corporation", 
-    date: "2024",
-    credentialId: "#HRJ#8231117a-4ff4-41ce-8e2f-de76f762b953#",
-    description: "Comprehensive networking certification covering enterprise network management",
-    icon: "🌐",
-    skills: ["Network Security", "Routing", "Switching", "Troubleshooting"]
   }
 ];
 
@@ -27,7 +27,7 @@ const Certifications = () => {
         <h2 className="headline-2 mb-4 reveal-up text-center fire-text">
           🏆 Professional Certifications
         </h2>
-        
+
         <p className="text-center text-gray-300 mb-12 text-lg reveal-up">
           Industry-recognized credentials that validate technical expertise
         </p>
@@ -35,7 +35,7 @@ const Certifications = () => {
         <div className="grid gap-6 md:grid-cols-2">
           {certifications.map(({ title, issuer, date, credentialId, description, icon, skills }, key) => (
             <div key={key} className="fire-card rounded-xl p-6 reveal-up relative">
-              
+
               <div className="relative z-10">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-3">
@@ -77,21 +77,21 @@ const Certifications = () => {
           <div className="inline-flex items-center gap-8 fire-card rounded-xl p-6">
             <div className="text-center">
               <div className="text-2xl font-bold fire-gradient bg-clip-text text-transparent mb-1">
-                2+
+                2
               </div>
               <div className="text-sm text-gray-400">Certifications</div>
             </div>
             <div className="w-px h-8 bg-red-500/30"></div>
             <div className="text-center">
               <div className="text-2xl font-bold fire-gradient bg-clip-text text-transparent mb-1">
-                AWS
+                GCP + AWS
               </div>
-              <div className="text-sm text-gray-400">Cloud Expert</div>
+              <div className="text-sm text-gray-400">Multi-Cloud</div>
             </div>
             <div className="w-px h-8 bg-red-500/30"></div>
             <div className="text-center">
               <div className="text-2xl font-bold fire-gradient bg-clip-text text-transparent mb-1">
-                2024
+                2025
               </div>
               <div className="text-sm text-gray-400">Latest Cert</div>
             </div>

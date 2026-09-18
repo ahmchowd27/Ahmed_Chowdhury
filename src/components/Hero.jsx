@@ -1,4 +1,5 @@
 import { ButtonPrimary, ButtonOutline } from "./Button";
+import TerminalHero from "./TerminalHero";
 
 const Hero = () => {
   return (
@@ -23,12 +24,12 @@ const Hero = () => {
             </div>
           </div>
 
-          <h2 className="headline-1 max-w-[15ch] sm:max-w-[20ch] lg:max-w-[15ch] mt-5 mb-8 lg:mb-10">
-            Flame Hashira Forging High-Performance Systems to Slay Digital Demons
+          <h2 className="headline-1 max-w-[18ch] sm:max-w-[22ch] lg:max-w-[17ch] mt-5 mb-8 lg:mb-10">
+            Software Engineer Building Backend Systems and Agentic AI Tooling
           </h2>
 
           <p className="text-lg text-gray-300 mb-8 max-w-md leading-relaxed">
-            Mastering Flame Breathing techniques in scalable microservices, cloud architecture, and enterprise systems that protect Ford&apos;s digital realm and beyond.
+            I build scalable backend and cloud systems at Ford, and increasingly work on agentic AI and developer-infrastructure problems — from event-driven microservices to RAG pipelines and MCP-based tooling.
           </p>
 
           <div className="flex items-center gap-3">
@@ -47,19 +48,8 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="hidden lg:block lg:flex lg:justify-center">
-          <figure className="w-64 h-64 fire-gradient rounded-full overflow-hidden fire-glow p-1">
-            <div className="w-full h-full bg-black/50 rounded-full overflow-hidden">
-              <img
-                src="/images/hero.jpg"
-                width={256}
-                height={256}
-                alt="Ahmed Chowdhury"
-                loading="eager"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </figure>
+        <div className="flex justify-center mt-12 lg:mt-0">
+          <TerminalHero />
         </div>
       </div>
     </section>
