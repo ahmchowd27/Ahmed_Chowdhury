@@ -11,7 +11,7 @@ const certifications = [
   {
     title: "AWS Certified Solutions Architect Associate",
     issuer: "Amazon Web Services",
-    date: "2024",
+    date: "2025",
     credentialId: "Valid",
     description: "Validates expertise in designing distributed systems and applications on AWS",
     icon: "☁️",

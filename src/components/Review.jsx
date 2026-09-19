@@ -6,7 +6,7 @@ import ReviewCard from "./ReviewCard";
 const experiences = [
   {
     content:
-      "Architecting high-performance microservices for vehicle order management, processing 50K+ daily queries with 99.9% uptime. Leading modernization of legacy systems with event-driven architecture using Kotlin, Spring Boot, Kafka, and BigQuery. Improved query performance by 75% and reduced infrastructure costs by 40% through system optimization. Implemented secure authentication with JWT, service discovery with Eureka, and automated deployments with Jenkins.",
+      "Independently built a Python/MCP code-intelligence platform across 13 enterprise repositories using symbol-aware chunking, BM25 and local-embedding semantic retrieval, and Reciprocal Rank Fusion ranking, cutting LLM context token consumption by ~30%. Built an agentic dependency-remediation workflow across 14 repositories that detects vulnerabilities and opens human-reviewed pull requests, cutting remediation time from ~4 hours to ~1 hour. Contributed to migrating an enterprise order-processing system from SQL Server to MongoDB and implemented reactive Redis caching that improved request latency by ~400ms. Develop Java and Kotlin Spring Boot microservices across a 30+ service order-fulfillment platform with event-driven Pub/Sub flows, deployed via Terraform, Jenkins, and Cloud Run on GCP.",
     name: "Software Engineer - Backend",
     imgSrc: "/images/ford.webp",
     company: "Ford Motor Company (GOMS Team) • April 2025 - Present",
@@ -22,10 +22,10 @@ const experiences = [
   },
   {
     content:
-      "Co-built production application serving 1,000+ active users with React frontend and Spring Boot backend. Implemented real-time order tracking with Kafka event-driven architecture and comprehensive CI/CD pipelines. Developed responsive web interface with seamless integration between user, order, and delivery services achieving 90%+ test coverage.",
-    name: "Software Engineer (Co-Owner)",
+      "Built and launched a K-12 rewards platform serving 500+ active users with Java, Spring Boot, React, and PostgreSQL, designing 15+ REST APIs and the data model behind authentication, roles, rewards, and redemptions. Containerized services with Docker and automated AWS deployments through GitHub Actions CI/CD.",
+    name: "Founding Full Stack Engineer",
     imgSrc: "/images/perksway.webp",
-    company: "Perksway • January 2024 - Present",
+    company: "Perksway • January 2024 - April 2025",
     type: "work",
   },
   {

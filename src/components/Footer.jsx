@@ -129,7 +129,7 @@ const Footer = () => {
                 <h5 className="text-sm font-semibold text-gray-100 mb-2">Contact Info</h5>
                 <p className="text-xs text-gray-400 mb-1">📧 ahmedssofa@gmail.com</p>
                 <p className="text-xs text-gray-400 mb-1">📱 313-455-6138</p>
-                <p className="text-xs text-gray-400">📍 Hamtramck, Michigan</p>
+                <p className="text-xs text-gray-400">📍 Warren, MI</p>
               </div>
             </div>
           </div>
