@@ -1,44 +1,29 @@
 import PropTypes from "prop-types";
 
-const ReviewCard = ({ content, imgSrc, name, company, type }) => {
-  return (
-    <div className="fire-card p-6 rounded-xl min-w-[320px] flex flex-col lg:min-w-[420px] relative overflow-hidden">
-      
-      <div className="relative z-10">
-        <div className="flex items-center gap-2 mb-4">
-          <span className="fire-text text-sm font-bold px-3 py-1 rounded-full bg-gradient-to-r from-red-400/20 to-orange-400/20 border border-red-400/30">
-            {type === "education" ? "🎓 Education" : "💼 Professional Experience"}
-          </span>
-        </div>
-
-        <p className="text-gray-300 mb-6 leading-relaxed text-sm">{content}</p>
-
-        <div className="flex items-center gap-3 mt-auto">
-          <figure className="img-box rounded-lg w-16 h-16 flex-shrink-0 fire-glow">
-            <img
-              src={imgSrc}
-              alt={name}
-              loading="lazy"
-              className="w-full h-full object-contain rounded-lg"
-            />
-          </figure>
-
-          <div className="flex-1">
-            <h3 className="text-gray-100 font-semibold mb-1">{name}</h3>
-            <p className="text-xs text-gray-400 leading-relaxed">{company}</p>
-          </div>
-        </div>
+const ReviewCard = ({ content, imgSrc, name, company, period, classes = "" }) => (
+  <article className={`fire-card rounded-xl p-6 md:p-8 min-w-0 ${classes}`}>
+    <div className="flex items-center gap-4 mb-5">
+      <figure className="img-box rounded-lg w-14 h-14 shrink-0">
+        <img src={imgSrc} alt={`${company} logo`} loading="lazy" width="56" height="56"
+          className="w-full h-full object-contain rounded-lg" />
+      </figure>
+      <div className="min-w-0">
+        <h3 className="text-gray-100 font-semibold">{name}</h3>
+        <p className="text-sm text-orange-300">{company}</p>
+        <p className="text-xs text-gray-400">{period}</p>
       </div>
     </div>
-  );
-};
+    <p className="text-sm leading-relaxed text-gray-300">{content}</p>
+  </article>
+);
 
 ReviewCard.propTypes = {
   content: PropTypes.string.isRequired,
   imgSrc: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   company: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
+  period: PropTypes.string.isRequired,
+  classes: PropTypes.string
 };
 
 export default ReviewCard;
