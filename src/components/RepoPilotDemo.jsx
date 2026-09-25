@@ -78,6 +78,11 @@ const RepoPilotDemo = () => {
         </div>
         <span className="lab-badge">LOCAL DEMO · SYNTHETIC REPOS</span>
       </div>
+      <figure className="border-b border-white/10 bg-black/30">
+        <img src="/images/repopilot-architecture.svg" width="1200" height="420" loading="lazy"
+          alt="RepoPilot concept: demo repositories flow through BM25 and semantic retrieval, RRF ranking, read-only MCP tools, and a coding agent."
+          className="w-full h-44 sm:h-auto object-cover object-center" />
+      </figure>
       <div className="flex flex-wrap gap-2 border-b border-white/10 px-5 py-3 md:px-7" role="tablist" aria-label="RepoPilot views">
         {tabs.map(([id, label]) => (
           <button key={id} id={`repopilot-tab-${id}`} type="button" role="tab"

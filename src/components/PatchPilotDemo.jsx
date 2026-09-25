@@ -13,6 +13,11 @@ const PatchPilotDemo = () => {
         </div>
         <span className="lab-badge">WORKFLOW MOCKUP · NO EXECUTION</span>
       </div>
+      <figure className="mt-5 overflow-hidden rounded-xl border border-red-500/20">
+        <img src="/images/patchpilot-workflow.svg" width="1200" height="400" loading="lazy"
+          alt="PatchPilot concept: scan a dependency issue, plan a bounded change, prepare a patch in a sandbox, validate it, and require human review."
+          className="w-full h-40 sm:h-auto object-cover object-center" />
+      </figure>
       <ol className="flex flex-wrap gap-2 my-6">
         {patchpilotDemo.steps.map((step, index) => (
           <li key={step} className="flex items-center gap-2 text-xs">
