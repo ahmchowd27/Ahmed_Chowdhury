@@ -1,84 +1,25 @@
-import { useState, useEffect, useMemo } from "react";
-
-const tokens = [
-  { text: "ahmed@portfolio", type: "prompt" },
-  { text: ":~$ ", type: "punct" },
-  { text: "curl", type: "cmd" },
-  { text: " api.ahmedchowdhury.dev/me\n\n", type: "plain" },
-  { text: "{\n", type: "punct" },
-  { text: '  "name"', type: "key" },
-  { text: ": ", type: "punct" },
-  { text: '"Ahmed Chowdhury"', type: "str" },
-  { text: ",\n", type: "punct" },
-  { text: '  "role"', type: "key" },
-  { text: ": ", type: "punct" },
-  { text: '"Software Engineer @ Ford"', type: "str" },
-  { text: ",\n", type: "punct" },
-  { text: '  "focus"', type: "key" },
-  { text: ": ", type: "punct" },
-  { text: '["backend", "cloud", "agentic AI"]', type: "str" },
-  { text: ",\n", type: "punct" },
-  { text: '  "certs"', type: "key" },
-  { text: ": ", type: "punct" },
-  { text: '["GCP ACE", "AWS SAA"]', type: "str" },
-  { text: ",\n", type: "punct" },
-  { text: '  "status"', type: "key" },
-  { text: ": ", type: "punct" },
-  { text: '"shipping"', type: "str" },
-  { text: "\n", type: "punct" },
-  { text: "}", type: "punct" },
-];
-
-const typeClasses = {
-  prompt: "text-gray-400",
-  punct: "text-gray-500",
-  cmd: "fire-text font-semibold",
-  plain: "text-gray-400",
-  key: "text-orange-400",
-  str: "text-amber-200",
-};
-
-const fullLength = tokens.reduce((sum, t) => sum + t.text.length, 0);
-
-const TerminalHero = () => {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (count >= fullLength) return;
-    const id = setTimeout(() => setCount((c) => c + 1), 18);
-    return () => clearTimeout(id);
-  }, [count]);
-
-  const rendered = useMemo(() => {
-    let remaining = count;
-    const parts = [];
-    for (const token of tokens) {
-      if (remaining <= 0) break;
-      parts.push({ text: token.text.slice(0, remaining), type: token.type });
-      remaining -= token.text.length;
-    }
-    return parts;
-  }, [count]);
-
-  return (
-    <div className="fire-card rounded-2xl overflow-hidden w-full max-w-md fire-glow">
-      <div className="flex items-center gap-2 px-4 py-3 border-b border-red-500/20 bg-black/30">
-        <span className="w-3 h-3 rounded-full bg-red-500/70"></span>
-        <span className="w-3 h-3 rounded-full bg-yellow-500/70"></span>
-        <span className="w-3 h-3 rounded-full bg-green-500/70"></span>
-        <span className="ml-3 text-xs text-gray-400">ahmed@portfolio</span>
-      </div>
-
-      <pre className="p-5 text-[13px] leading-relaxed font-mono whitespace-pre-wrap break-words min-h-[260px]">
-        {rendered.map((part, i) => (
-          <span key={i} className={typeClasses[part.type]}>
-            {part.text}
-          </span>
-        ))}
-        <span className="terminal-cursor text-orange-400">▋</span>
-      </pre>
+const TerminalHero = () => (
+  <div className="fire-card rounded-2xl overflow-hidden w-full max-w-lg shadow-xl" aria-label="Static RepoPilot demo preview">
+    <div className="flex items-center justify-between gap-3 px-4 py-3 border-b border-red-500/20 bg-black/30">
+      <span className="text-xs font-mono text-gray-300">repopilot / preview</span>
+      <span className="lab-badge">STATIC DEMO</span>
     </div>
-  );
-};
+    <div className="p-5 font-mono text-xs sm:text-sm leading-7 text-gray-300">
+      <p className="text-orange-300 break-words">$ repopilot search &quot;where is authentication enforced?&quot;</p>
+      <p className="text-gray-500 mt-3">Synthetic demo repository · prepared example</p>
+      <div className="grid grid-cols-[auto_auto] justify-start gap-x-8 mt-4">
+        <span>BM25</span><span className="text-green-300">✓ ranked</span>
+        <span>Semantic</span><span className="text-green-300">✓ ranked</span>
+        <span>Hybrid</span><span className="text-green-300">✓ RRF</span>
+      </div>
+      <p className="text-gray-400 mt-4">Ranked context</p>
+      <p>→ SecurityConfig.java</p>
+      <p>→ JwtAuthFilter.java</p>
+      <p>→ JwtService.java</p>
+      <p className="text-orange-300 mt-3">MCP interface planned</p>
+    </div>
+    <a href="#ai-lab" className="block border-t border-red-500/20 px-5 py-3 text-sm text-orange-300 hover:bg-red-500/10">Explore AI Engineering Lab <span aria-hidden="true">→</span></a>
+  </div>
+);
 
 export default TerminalHero;

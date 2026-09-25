@@ -3,7 +3,7 @@ import TerminalHero from "./TerminalHero";
 
 const Hero = () => {
   return (
-    <section id="home" className="pt-32 lg:pt-36 min-h-screen flex items-center">
+    <section id="home" className="pt-32 pb-10 lg:pt-36 min-h-screen flex items-center">
       <div className="container items-center lg:grid lg:grid-cols-2 lg:gap-10">
         <div>
           <div className="flex items-center gap-3">
@@ -29,10 +29,10 @@ const Hero = () => {
           </h2>
 
           <p className="text-lg text-gray-300 mb-8 max-w-md leading-relaxed">
-            I build scalable backend and cloud systems at Ford, and increasingly work on agentic AI and developer-infrastructure problems — from event-driven microservices to RAG pipelines and MCP-based tooling.
+            I build backend and cloud systems, and develop retrieval and agentic tooling for engineers. My work spans distributed services, data platforms, and developer infrastructure.
           </p>
 
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             <ButtonPrimary
               href="/images/Ahmed-Chowdhury-Resume.pdf"
               target="_blank"
