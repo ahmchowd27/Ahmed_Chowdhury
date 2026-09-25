@@ -19,7 +19,7 @@ Run `npm run build` and `npm run lint` before shipping. `npm run preview` serves
 - `src/components/`: portfolio sections, terminal preview, RepoPilot inspector, and PatchPilot mockup.
 - `src/data/repopilotDemo.js`: synthetic repositories, questions, source snippets, and prepared rank lists.
 - `src/data/patchpilotDemo.js`: synthetic maintenance example and illustrative diff.
-- `public/images/repopilot-architecture.svg` and `public/images/patchpilot-workflow.svg`: illustrative system diagrams for the two lab projects.
+- `public/images/repopilot-evidence.jpg` and `public/images/patchpilot-review.jpg`: optimized concept artwork for the two lab projects; neither depicts a live backend.
 - `src/services/repopilot.js`: search contract and deterministic local demo adapter.
 - `src/index.css` and `src/performance.css`: Tailwind utilities, fire styling, developer tool panels, and motion behavior.
 

@@ -70,19 +70,25 @@ const RepoPilotDemo = () => {
 
   return (
     <article className="lab-shell" aria-labelledby="repopilot-title">
-      <div className="flex flex-wrap items-start justify-between gap-4 border-b border-white/10 p-5 md:p-7">
-        <div>
-          <p className="lab-eyebrow">01 / Retrieval & code intelligence</p>
-          <h3 id="repopilot-title" className="text-2xl font-semibold text-gray-100">RepoPilot</h3>
-          <p className="text-sm text-gray-400 mt-2 max-w-2xl">Follow a coding agent through MCP retrieval, then inspect exactly which source context supports its response.</p>
+      <div className="grid border-b border-white/10 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
+        <div className="flex flex-col justify-between gap-6 p-5 md:p-8">
+          <div>
+            <p className="lab-eyebrow">01 / Retrieval & code intelligence</p>
+            <h3 id="repopilot-title" className="text-3xl font-semibold text-gray-100">RepoPilot</h3>
+            <p className="text-sm text-gray-300 mt-3 max-w-md leading-relaxed">Find the source files that matter. Follow a coding agent through MCP retrieval, then inspect the context behind its response.</p>
+          </div>
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="lab-badge">LOCAL DEMO · SYNTHETIC REPOS</span>
+            <span className="text-xs text-gray-400">BM25 + semantic → RRF → MCP</span>
+          </div>
         </div>
-        <span className="lab-badge">LOCAL DEMO · SYNTHETIC REPOS</span>
+        <figure className="relative h-52 overflow-hidden border-t border-white/10 md:h-auto md:min-h-72 md:border-l md:border-t-0">
+          <img src="/images/repopilot-evidence.jpg" width="1440" height="618" loading="lazy"
+            alt="Concept artwork: two streams of source-file tiles narrow to a few selected files beside a coding terminal."
+            className="absolute inset-0 h-full w-full object-cover object-center" />
+          <figcaption className="absolute bottom-3 left-3 rounded bg-black/75 px-3 py-1.5 font-mono text-[10px] tracking-wider text-gray-200">SOURCE EVIDENCE / CONCEPT ART</figcaption>
+        </figure>
       </div>
-      <figure className="border-b border-white/10 bg-black/30">
-        <img src="/images/repopilot-architecture.svg" width="1200" height="420" loading="lazy"
-          alt="RepoPilot concept: demo repositories flow through BM25 and semantic retrieval, RRF ranking, read-only MCP tools, and a coding agent."
-          className="w-full h-44 sm:h-auto object-cover object-center" />
-      </figure>
       <div className="flex flex-wrap gap-2 border-b border-white/10 px-5 py-3 md:px-7" role="tablist" aria-label="RepoPilot views">
         {tabs.map(([id, label]) => (
           <button key={id} id={`repopilot-tab-${id}`} type="button" role="tab"

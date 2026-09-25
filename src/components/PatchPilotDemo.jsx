@@ -5,19 +5,22 @@ const PatchPilotDemo = () => {
   const [showDiff, setShowDiff] = useState(false);
   return (
     <article className="lab-shell mt-6 p-5 md:p-7" aria-labelledby="patchpilot-title">
-      <div className="flex flex-wrap items-start justify-between gap-4">
-        <div>
-          <p className="lab-eyebrow">02 / Agentic maintenance & human review</p>
-          <h3 id="patchpilot-title" className="text-2xl font-semibold">PatchPilot</h3>
-          <p className="text-sm text-gray-400 mt-2 max-w-2xl">A proposed clean-room workflow for bounded maintenance in sandboxed demo repositories.</p>
+      <div className="grid gap-5 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-stretch">
+        <div className="flex flex-col justify-between gap-5 lg:order-2">
+          <div>
+            <p className="lab-eyebrow">02 / Agentic maintenance & human review</p>
+            <h3 id="patchpilot-title" className="text-3xl font-semibold">PatchPilot</h3>
+            <p className="text-sm text-gray-300 mt-3 max-w-md leading-relaxed">A bounded maintenance workflow: prepare a patch in a sandbox, validate it, and leave the decision with a person.</p>
+          </div>
+          <span className="lab-badge self-start">WORKFLOW MOCKUP · NO EXECUTION</span>
         </div>
-        <span className="lab-badge">WORKFLOW MOCKUP · NO EXECUTION</span>
+        <figure className="relative h-48 overflow-hidden rounded-xl border border-red-500/20 sm:h-60 lg:order-1 lg:h-auto lg:min-h-64">
+          <img src="/images/patchpilot-review.jpg" width="1440" height="618" loading="lazy"
+            alt="Concept artwork: a dependency tile is replaced inside a guarded sandbox, beside a proposed diff and a human review station."
+            className="absolute inset-0 h-full w-full object-cover object-center" />
+          <figcaption className="absolute bottom-3 left-3 rounded bg-black/75 px-3 py-1.5 font-mono text-[10px] tracking-wider text-gray-200">SANDBOX / HUMAN REVIEW / CONCEPT ART</figcaption>
+        </figure>
       </div>
-      <figure className="mt-5 overflow-hidden rounded-xl border border-red-500/20">
-        <img src="/images/patchpilot-workflow.svg" width="1200" height="400" loading="lazy"
-          alt="PatchPilot concept: scan a dependency issue, plan a bounded change, prepare a patch in a sandbox, validate it, and require human review."
-          className="w-full h-40 sm:h-auto object-cover object-center" />
-      </figure>
       <ol className="flex flex-wrap gap-2 my-6">
         {patchpilotDemo.steps.map((step, index) => (
           <li key={step} className="flex items-center gap-2 text-xs">
