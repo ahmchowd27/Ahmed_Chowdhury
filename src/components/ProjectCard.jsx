@@ -2,24 +2,13 @@ import PropTypes from "prop-types";
 
 const ProjectCard = ({ imgSrc, title, tags, projectLink, description, impact, classes, featured }) => {
 
-  const handleCardClick = (e) => {
-    // If the click is on the overlay link, let it handle the navigation
-    if (e.target.tagName === 'A') return;
-
-    // Otherwise, programmatically open the link
-    if (projectLink) {
-      window.open(projectLink, '_blank', 'noopener,noreferrer');
-    }
-  };
-
   return (
     <div
       className={
-        "relative fire-card rounded-xl p-6 transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer " +
+        "relative fire-card rounded-xl p-6 transition-shadow duration-300 hover:shadow-xl " +
         (featured ? "md:p-8 " : "") +
         classes
       }
-      onClick={handleCardClick}
     >
 
       <div className="relative z-10">
@@ -82,7 +71,7 @@ const ProjectCard = ({ imgSrc, title, tags, projectLink, description, impact, cl
           href={projectLink} 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="absolute inset-0 z-20 cursor-pointer"
+          className="absolute inset-0 z-20 cursor-pointer rounded-xl"
           aria-label={`View ${title} project`}
         ></a>
       )}

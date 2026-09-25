@@ -13,9 +13,9 @@ const skillCategories = [
   },
   {
     title: "AI & Agentic Engineering",
-    icon: "🤖",
+    icon: "⌘",
     description: "Designing retrieval systems and agentic workflows that extend how software gets built and operated",
-    skills: ["MCP (Model Context Protocol)", "RAG & Hybrid Retrieval", "Semantic Search & Embeddings", "BM25 & RRF Ranking", "Human-in-the-Loop Workflows"]
+    skills: ["Python", "MCP", "RAG", "BM25", "Embeddings", "Semantic & Hybrid Retrieval", "Reciprocal Rank Fusion", "Human-in-the-Loop Workflows"]
   }
 ];
 
