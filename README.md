@@ -24,7 +24,7 @@ Run `npm run build` and `npm run lint` before shipping. `npm run preview` serves
 
 ## AI Engineering Lab
 
-**RepoPilot — DEMO:** Visitors can select a synthetic repository, run prepared example questions in BM25, semantic, or hybrid mode, inspect result provenance and snippets, and view a calculated RRF ranking. The terminal preview is static. Custom questions show a no-result message. There is no live ingestion, embedding model, search backend, generated answer, or MCP server.
+**RepoPilot — DEMO:** The default view walks through a prepared CLI coding agent session: a question, conceptual MCP `hybrid_search` and `get_context` calls, ranked source references, and an illustrative file-grounded response. Visitors can inspect the cited files, select a synthetic repository, run prepared example questions in BM25, semantic, or hybrid mode, and view a calculated RRF ranking. OpenCode and GitHub Copilot CLI are shown as example clients, but neither is connected. The terminal preview is static. Custom questions show a no-result message. There is no live ingestion, embedding model, search backend, generated answer, or MCP server.
 
 **PatchPilot — DEMO:** Shows a controlled maintenance workflow and a sanitized illustrative diff. It does not scan dependencies, modify repositories, validate builds, or open pull requests. Human review is part of the proposed workflow.
 

@@ -62,3 +62,26 @@ export const demoRankings = {
   incidents: { lexical: ["repository", "incident", "event"], semantic: ["incident", "event", "repository"] },
   uploads: { lexical: ["upload", "endpoint", "storage"], semantic: ["endpoint", "upload", "storage"] }
 };
+
+export const demoAgentOutcomes = {
+  authentication: {
+    evidence: ["security", "filter"],
+    response: "Authentication is enforced in SecurityConfig.filterChain, which requires authenticated requests by default. JwtAuthFilter.doFilterInternal validates a bearer token and sets the security context.",
+    nextStep: "Inspect the route matchers and token validation path before changing access rules."
+  },
+  managers: {
+    evidence: ["security", "manager"],
+    response: "The manager route is restricted in SecurityConfig.filterChain, and ManagerController.listReports also declares a MANAGER role check.",
+    nextStep: "Review both policy and method-level checks before changing manager access."
+  },
+  incidents: {
+    evidence: ["incident", "repository"],
+    response: "IncidentService.record maps the incoming command and calls IncidentRepository.save. The repository defines the persistence boundary.",
+    nextStep: "Inspect the entity mapping and transaction boundary before changing persistence behavior."
+  },
+  uploads: {
+    evidence: ["endpoint", "upload"],
+    response: "UploadController.upload delegates to ImageUploadService.store, which validates the file type and passes its contents to ObjectStore.",
+    nextStep: "Inspect validation and storage error handling before changing the upload flow."
+  }
+};

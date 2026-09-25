@@ -16,9 +16,9 @@ const TerminalHero = () => (
       <p>→ SecurityConfig.java</p>
       <p>→ JwtAuthFilter.java</p>
       <p>→ JwtService.java</p>
-      <p className="text-orange-300 mt-3">MCP interface planned</p>
+      <p className="text-orange-300 mt-3">Agent → get_context(symbols) → cite source</p>
     </div>
-    <a href="#ai-lab" className="block border-t border-red-500/20 px-5 py-3 text-sm text-orange-300 hover:bg-red-500/10">Explore AI Engineering Lab <span aria-hidden="true">→</span></a>
+    <a href="#ai-lab" className="block border-t border-red-500/20 px-5 py-3 text-sm text-orange-300 hover:bg-red-500/10">Explore CLI agent workflow <span aria-hidden="true">→</span></a>
   </div>
 );
 

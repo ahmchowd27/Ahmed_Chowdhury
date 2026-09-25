@@ -7,6 +7,7 @@ RepoPilot is a clean-room public project concept. It must index only approved pu
 | Area | Status | Notes |
 | --- | --- | --- |
 | React search interface, retrieval inspector, context viewer | IMPLEMENTED | In this portfolio |
+| CLI agent workflow walkthrough | DEMO | Prepared MCP call trace and illustrative response; no agent or server connected |
 | Prepared questions, synthetic files, deterministic rank lists | DEMO | Local data only; no network search |
 | RRF rank calculation in the demo service | IMPLEMENTED | Calculated from prepared rank lists with k = 60 |
 | Ingestion, parser, indexes, embeddings, API, MCP server | PLANNED | No production backend exists in this repository |

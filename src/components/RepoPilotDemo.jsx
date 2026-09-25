@@ -3,9 +3,11 @@ import RetrievalInspector from "./RetrievalInspector";
 import CodeContextViewer from "./CodeContextViewer";
 import MCPToolsPanel from "./MCPToolsPanel";
 import RepoPilotArchitecture from "./RepoPilotArchitecture";
+import AgentWorkflowPanel from "./AgentWorkflowPanel";
 import { repopilotDemoService } from "../services/repopilot";
 
 const tabs = [
+  ["agent", "CLI agent workflow"],
   ["search", "Search & inspect"],
   ["tools", "MCP Tools"],
   ["architecture", "Architecture"]
@@ -20,7 +22,7 @@ const RepoPilotDemo = () => {
   const [repository, setRepository] = useState(repopilotDemoService.repositories[0].id);
   const [query, setQuery] = useState(repopilotDemoService.questions[0].query);
   const [mode, setMode] = useState("hybrid");
-  const [tab, setTab] = useState("search");
+  const [tab, setTab] = useState("agent");
   const [response, setResponse] = useState(null);
   const [selected, setSelected] = useState(null);
   const [searching, setSearching] = useState(false);
@@ -56,13 +58,23 @@ const RepoPilotDemo = () => {
     }
   };
 
+  const inspectAgentResult = ({ repository: nextRepository, query: nextQuery, result, selected: nextSelected }) => {
+    setRepository(nextRepository);
+    setQuery(nextQuery);
+    setMode("hybrid");
+    setResponse(result);
+    setSelected(nextSelected);
+    document.getElementById("repopilot-tab-search")?.focus();
+    setTab("search");
+  };
+
   return (
     <article className="lab-shell" aria-labelledby="repopilot-title">
       <div className="flex flex-wrap items-start justify-between gap-4 border-b border-white/10 p-5 md:p-7">
         <div>
           <p className="lab-eyebrow">01 / Retrieval & code intelligence</p>
           <h3 id="repopilot-title" className="text-2xl font-semibold text-gray-100">RepoPilot</h3>
-          <p className="text-sm text-gray-400 mt-2 max-w-2xl">Inspect how lexical and semantic rankings combine into grounded source context.</p>
+          <p className="text-sm text-gray-400 mt-2 max-w-2xl">Follow a coding agent through MCP retrieval, then inspect exactly which source context supports its response.</p>
         </div>
         <span className="lab-badge">LOCAL DEMO · SYNTHETIC REPOS</span>
       </div>
@@ -84,6 +96,7 @@ const RepoPilotDemo = () => {
         ))}
       </div>
       <div className="p-4 md:p-7" id={`repopilot-panel-${tab}`} role="tabpanel" aria-labelledby={`repopilot-tab-${tab}`}>
+        {tab === "agent" && <AgentWorkflowPanel onInspect={inspectAgentResult} />}
         {tab === "tools" && <MCPToolsPanel />}
         {tab === "architecture" && <RepoPilotArchitecture />}
         {tab === "search" && (

@@ -11,7 +11,7 @@ const MCPToolsPanel = () => (
   <div className="lab-panel">
     <p className="lab-eyebrow">Planned read-only interface</p>
     <h3 className="text-xl font-semibold mb-2">MCP Tools</h3>
-    <p className="text-sm text-gray-400 max-w-2xl mb-6">The proposed public MCP server would make indexed code context available to an AI coding agent. These are conceptual tools; this page does not invoke an MCP server.</p>
+    <p className="text-sm text-gray-400 max-w-2xl mb-6">The proposed public MCP server would make indexed code context available to CLI coding agents such as OpenCode or GitHub Copilot CLI. The CLI agent workflow tab shows how search and context tools work together. These tools are conceptual; this page does not invoke an MCP server.</p>
     <div className="grid gap-3 sm:grid-cols-2">
       {tools.map(([name, description]) => (
         <div className="rounded-lg border border-white/10 bg-black/30 p-4" key={name}>
