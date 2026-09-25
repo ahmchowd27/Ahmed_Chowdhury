@@ -11,7 +11,8 @@ const Work = () => (
         title="SafeSnap — Safety Reporting Platform"
         tags={["Kotlin", "Spring Boot", "PostgreSQL", "Google Vision API", "OpenAI", "AWS S3"]}
         projectLink="https://github.com/ahmchowd27/SafeSnap-Backend"
-        description="A backend for safety incident reporting with secured REST APIs, image analysis, and assisted root cause analysis. Explore its public repository for implementation details."
+        liveLink="https://frontend-two-smoky-73.vercel.app/"
+        description="A backend for safety incident reporting with secured REST APIs, image analysis, and assisted root cause analysis. Explore the live application and its public backend repository."
         featured
         classes=""
       />

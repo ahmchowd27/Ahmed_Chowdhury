@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-const ProjectCard = ({ imgSrc, title, tags, projectLink, description, impact, classes, featured }) => {
+const ProjectCard = ({ imgSrc, title, tags, projectLink, liveLink, description, impact, classes, featured }) => {
 
   return (
     <div
@@ -35,11 +35,6 @@ const ProjectCard = ({ imgSrc, title, tags, projectLink, description, impact, cl
 
         <div className="flex items-center mb-3">
           <h3 className={"font-bold text-gray-100 flex-1 " + (featured ? "text-2xl" : "text-xl")}>{title}</h3>
-          <div className="w-10 h-10 rounded-lg fire-gradient flex items-center justify-center text-black shrink-0">
-            <span className="material-symbols-rounded text-sm" aria-hidden="true">
-              arrow_outward
-            </span>
-          </div>
         </div>
 
         {description && (
@@ -64,17 +59,20 @@ const ProjectCard = ({ imgSrc, title, tags, projectLink, description, impact, cl
             {impact}
           </div>
         )}
-      </div>
 
-      {projectLink && (
-        <a 
-          href={projectLink} 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="absolute inset-0 z-20 cursor-pointer rounded-xl"
-          aria-label={`View ${title} project`}
-        ></a>
-      )}
+        <div className="flex flex-wrap gap-3 mt-6">
+          {liveLink && (
+            <a href={liveLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+              Open live app <span aria-hidden="true">↗</span>
+            </a>
+          )}
+          {projectLink && (
+            <a href={projectLink} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
+              View source <span aria-hidden="true">↗</span>
+            </a>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
@@ -84,6 +82,7 @@ ProjectCard.propTypes = {
   title: PropTypes.string.isRequired,
   tags: PropTypes.array.isRequired,
   projectLink: PropTypes.string,
+  liveLink: PropTypes.string,
   description: PropTypes.string,
   impact: PropTypes.string,
   classes: PropTypes.string,

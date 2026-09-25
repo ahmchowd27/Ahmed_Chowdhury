@@ -28,7 +28,7 @@ Run `npm run build` and `npm run lint` before shipping. `npm run preview` serves
 
 **PatchPilot — DEMO:** Shows a controlled maintenance workflow and a sanitized illustrative diff. It does not scan dependencies, modify repositories, validate builds, or open pull requests. Human review is part of the proposed workflow.
 
-These are clean-room public demonstrations, separate from professional work at Ford. Their synthetic files and paths do not represent Ford systems or a public SafeSnap source tree. SafeSnap is a separate featured project linked to its public repository.
+These are clean-room public demonstrations, separate from professional work at Ford. Their synthetic files and paths do not represent Ford systems or a public SafeSnap source tree. SafeSnap is a separate featured project with links to its live application and public backend repository.
 
 ## Future RepoPilot integration
 
